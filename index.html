@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Page</title>
+    <!-- adding font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+    <!-- linking stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+
+        <!-- adding heading -->
+        <h1>Weather App</h1>
+
+        <div class="tab-container">
+            <!-- tabs name & custom attribute -->
+            <p class="tab" data-userWeather>Your Weather</p>
+            <p class="tab" data-searchWeather>Search Weather</p>
+        </div>
+
+        <div class="weather-container">
+
+            <!-- GRANT LOCATION PAGE-->
+            <div class="sub-container grant-location-container">
+                <!-- location image -->
+                <img src="./assets/location.png" width="80" height="80" loading="lazy">
+                <!-- display msg -->
+                <p>Grant Location Access</p>
+                <p>Allow Access to get weather Information</p>
+                <button class="btn" data-grantAccess>Grant Access</button>
+            </div>
+
+            <!-- SEARCH FORM  -->
+            <form class="form-container" data-searchForm>
+                <!-- tab naming -->
+                <input placeholder="Search for City..." data-searchInput>
+                <!-- search button -->
+                <button class="btn" type="submit">
+                    <img src="./assets/search.png"  width="20" height="20" loading="lazy">
+                </button>
+            </form>
+
+            <!--- LOADING SCREEN -->
+            <div class="sub-container loading-container">
+                <!-- adding img -->
+                <img src="./assets/loading.gif" width="150" height="150">
+                <!-- text -->
+                <p>Loading</p>
+            </div>
+
+            <!-- SHOW WEATHER PAGE -->
+            <!-- used in search tab and your location -->
+            <div class="sub-container user-info-container">
+
+                <!--city name and Flag-->
+                <div class="name">
+                    <!-- cityname -->
+                    <p data-cityName></p>
+                    <!-- flag of country -->
+                    <img data-countryIcon>
+                </div>
+
+                <!--dynamic weather descriptuion-->
+                <p data-weatherDesc></p>
+                <!--dynamic weather Icon-->
+                <img data-weatherIcon>
+                <!--dynamic temperature-->
+                <p data-temp></p>
+
+                <!-- 3 CARDS -->
+                <div class="parameter-container">
+
+                    <!--card 1-->
+                    <div class="parameter">
+                        <img src="./assets/wind.png" >
+                        <p>windspeed</p>
+                        <!-- for dynamic value -->
+                        <p data-windspeed></p>
+                    </div>
+
+                    <!--card 2-->
+                    <div class="parameter">
+                        <img src="./assets/humidity.png" >
+                        <p>humidity</p>
+                        <!-- for dynamic value -->
+                        <p data-humidity></p>
+                    </div>
+
+                    <!--card 3-->
+                    <div class="parameter">
+                        <img src="./assets/cloud.png" >
+                        <p>Clouds</p>
+                        <!-- for dynamic value -->
+                        <p data-cloudiness></p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- link js file -->
+    <script src="index.js"></script>
+</body>
+</html>
